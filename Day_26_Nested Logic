@@ -1,0 +1,48 @@
+// https://www.hackerrank.com/challenges/30-nested-logic
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+#define NO_FINE     	0
+#define DAYS_LATE   	15
+#define MONTHS_LATE 	500
+#define YEARS_LATE   	10000
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    int RD, ED, RM, EM, RY, EY;
+    
+    char leap_months[12]={31,29,31,30,31,30,31,31,30,31,30,31};
+    char reg_months[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+    
+    
+    unsigned int fine=0;
+    unsigned long actualdays=0;
+    unsigned long expecteddays=0;
+    
+    //printf ("Enter Aactual date of return in DMY format\n");
+    scanf ("%d%d%d", &RD, &RM, &RY);
+    
+    //printf ("Enter Aactual date of return in DMY format\n");
+    scanf ("%d%d%d", &ED, &EM, &EY);
+    
+    
+  if (RY == EY && RM == EM && RD == ED) 
+  	fine = NO_FINE;
+  
+  else if (RY == EY && RM == EM && RD > ED)
+  	fine = DAYS_LATE * (RD-ED);
+  
+  else if (RY == EY && RM > EM )
+  	fine = MONTHS_LATE * (RM-EM);
+  
+  else if (RY > EY )
+  	fine = YEARS_LATE;
+  
+  printf("%d",fine);
+  
+  return 0;
+}
