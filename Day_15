@@ -1,0 +1,42 @@
+// https://www.hackerrank.com/challenges/30-linked-list
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node
+{
+	int data;
+	struct Node *next;
+}Node;
+
+Node * insert (Node *head, int data)
+{
+	//Complete this function
+        Node **pp = &head;
+        while (*pp) 
+                pp = &((*pp)->next);
+        *pp = new Node (data);
+        return head;
+}
+
+void display (Node *head)
+{
+	Node *start = head;
+	
+	while (strart) {
+		printf ("%d ", start->data);
+		start = start->next;
+	}
+}
+
+int main (void)
+{
+	int T, data;
+	scanf ("%d", &T);
+	Node *head = NULL;
+	while (T-->0) {
+		scanf ("%d", &data);
+		head = insert(head, data);
+	}
+	display (head);
+}
