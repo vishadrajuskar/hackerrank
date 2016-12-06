@@ -1,0 +1,36 @@
+// https://www.hackerrank.com/challenges/30-2d-arrays
+// The Hourglass problem
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int arr[6][6];
+    int sum = 0, maxSum = -36985247;
+
+    for(int arr_i = 0; arr_i < 6; arr_i++){
+       for(int arr_j = 0; arr_j < 6; arr_j++){
+          
+          scanf("%d",&arr[arr_i][arr_j]);
+       }
+    }
+    for(int arr_i = 0; arr_i < 6; arr_i++){
+       for(int arr_j = 0; arr_j < 6; arr_j++) {
+           if (arr_j + 2 < 6 && arr_i + 2 < 6) {
+               sum = arr [arr_i] [arr_j] + arr [arr_i] [arr_j + 1] + arr [arr_i] [arr_j + 2] 
+                     + arr [arr_i + 1] [arr_j + 1] 
+                     + arr [arr_i + 2] [arr_j] + arr [arr_i + 2] [arr_j + 1] + arr [arr_i + 2] [arr_j + 2];
+                if (sum > maxSum)
+                    maxSum = sum;
+           }
+       }
+    }
+    printf ("%d\n", maxSum);
+    
+    return 0;
+}

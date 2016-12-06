@@ -1,0 +1,27 @@
+// https://www.hackerrank.com/challenges/30-data-types/copy-from/22235176
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main (void)
+{
+  int i = 4;
+  double d = 4.0;
+  char s [] = "HackerRank ";
+  
+  int ii;
+  double dd;
+  char ss [50];
+        
+  scanf("%d %lf\n%[^\n]", &ii, &dd, ss);
+
+  printf ("%d\n", i + ii);
+  printf ("%.1lf\n", d + dd);
+
+  printf ("%s", s);
+  printf ("%s\n", ss);
+  
+  return 0;
+}
