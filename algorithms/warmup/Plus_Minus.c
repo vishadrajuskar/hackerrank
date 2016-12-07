@@ -15,7 +15,6 @@ int main(){
     }
     
     float pos = 0, neg = 0, zero = 0;
-    
     for(int arr_i = 0; arr_i < n; arr_i++){
         if (arr [arr_i] > 0)
             pos++;
@@ -24,7 +23,6 @@ int main(){
         else
             zero++;
     }
-    
     printf ("%f\n%f\n%f\n", pos/n, neg/n, zero/n);
         
     return 0;
