@@ -5,7 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
     // Declare a variable named 'input_string' to hold our input.
     char input_string[105]; 
     
